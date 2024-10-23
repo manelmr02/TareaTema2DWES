@@ -4,15 +4,14 @@
         private $nombre;
         private $apellidos;
         private $email;
-        private $edad=0;//tiene que ser un int
+        
 
-        public function __construct($id,$nombre,$apellidos,$email,$edad)
+        public function __construct($id,$nombre,$apellidos,$email)
         {
             $this->id=$id;
             $this->nombre=$nombre;
             $this->apellidos=$apellidos;
             $this->email=$email;
-            $this->edad=$edad;
         }
 
         public function getId(){return $this->id; }
@@ -23,8 +22,6 @@
         private function setApellidos($apellidos){$this->apellidos=$apellidos;}
         public function getEmail(){return $this->email;}
         private function setEmail($email){ $this->email=$email; }
-        public function getEdad(){return $this->edad;}
-        private function setEdad($edad){ $this->edad=$edad;}
 
         public function __toString()
         {

@@ -3,14 +3,15 @@
         private $asignaturas=array();//inicializamos como un array vacío
 
         private $cursoAbonado=false;//por defecto es false
+
+        private $edad=0;//tiene que ser un int
         
         function __construct($id,$nombre,$apellidos,$email,$edad){
-            parent::__construct($id,$nombre,$apellidos,$email,$edad);
+            parent::__construct($id,$nombre,$apellidos,$email);
+            $this->edad=$edad;
             $this->asignaturas=array();
             $this->cursoAbonado=false;
         }
-
-
 
         function abonarCurso(){
             $this->cursoAbonado=true;
@@ -77,7 +78,6 @@
             ];
             //una vez llamado a este metodo se crea la matriz de alumnos, pero tenemos que matricular a los alumnos en las asignaturas correspondientes
         }
-
 
     }
 ?>

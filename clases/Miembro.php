@@ -28,7 +28,7 @@
 
         public function __toString()
         {
-            return "Miembro con ID: ".$this->getId()." Nombre: ".$this->getNombre()." Apellidos: ".$this->getApellidos()." Email: ".$this->getEmail()." Edad: ".$this->getEdad();
+            return " Nombre: ".$this->getNombre()." ".$this->getApellidos().", Email: ".$this->getEmail();
         }
 
     }

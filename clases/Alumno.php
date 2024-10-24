@@ -1,4 +1,5 @@
 <?php
+    require "Miembro.php";
     class Alumno extends Miembro{
         private $asignaturas=array();//inicializamos como un array vacío
 
@@ -17,7 +18,7 @@
             $this->cursoAbonado=true;
         }
 
-        function matricularseEnAsignatura($asignaturaMatricular){
+        function matricularEnAsignatura($asignaturaMatricular){
             $comprobacion=false;
             for($i= 0;$i<count($this->asignaturas);$i++){
                 if($this->asignaturas[$i]==$asignaturaMatricular){
@@ -42,41 +43,46 @@
 
         }
 
+        function getEdad(){
+            return $this->edad;
+        }
+
         static function crearAlumnosDeMuestra(){
             $alumnos=[
-                [
+                
                     new Alumno(1,"Laura","Martínez","laura.martinez@email.com",22)
-                ],
-                [
+                ,
+                
                     new Alumno(2,"Sergio","López","sergio.lopez@email.com",25)
-                ],
-                [
+                ,
+                
                     new Alumno(3,"Carlos","García","carlos.garcia@email.com",24)
-                ],
-                [
+                ,
+                
                     new Alumno(4,"Marta","Sánchez","marta.sanchez@email.com",23)
-                ],
-                [
+                ,
+                
                     new Alumno(5,"Alba","Fernández","alba.fernandez@email.com",21)
-                ],
-                [
+                ,
+                
                     new Alumno(6,"David","Rodríguez","david.rodriguez@email.com",26)
-                ],
-                [
+                ,
+                
                     new Alumno(7,"Lucía","Jímenez","lucia.jimenez@email.com",20)
-                ],
-                [
+                ,
+                
                     new Alumno(8,"Jorge","Pérez","jorge.perez@email.com",22)
-                ],
-                [
+                ,
+                
                     new Alumno(9,"Elena","Romero","elena.romero@email.com",23)
-                ],
-                [
+                ,
+                
                     new Alumno(10,"Pablo","Torres","pablo.torres@email.com",24)
-                ],
+                
 
             ];
             //una vez llamado a este metodo se crea la matriz de alumnos, pero tenemos que matricular a los alumnos en las asignaturas correspondientes
+            return $alumnos;
         }
 
     }

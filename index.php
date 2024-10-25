@@ -69,7 +69,7 @@
             <ol>
                 <?php
                 $alumnosMenores = array_filter($alumnos, function ($alumno) {
-                    return $alumno->getEdad() <= 23; 
+                    return $alumno->getEdad() <= 23;
                 });
                 ?>
                 <?php foreach ($alumnosMenores as $alumno) : ?>
@@ -78,6 +78,38 @@
                     </li>
                 <?php endforeach; ?>
             </ol>
+
+    <h1>Alumnos con al menos dos asignaturas</h1>
+            <ol>
+                <?php
+                $alumnosConDosAsig = array_filter($alumnos, function ($alumno) {
+                    return count($alumno->getAsignaturas()) >= 2;
+                })
+                ?>
+                <?php foreach ($alumnosConDosAsig as $alumno) : ?>
+                    <li>
+                        <?= $alumno ?>
+                    </li>
+                <?php endforeach; ?>
+            </ol>
+
+    <h1>Asignaturas con algún alumno matriculado</h1>
+            <ol>
+                <?php
+                    $asignaturasConMatricula=array();
+                    foreach ($alumnos as $alumno) {
+                        foreach ($alumno->getAsignaturas() as $asignatura) {
+                            if (!in_array($asignatura, $asignaturasConMatricula)) {
+                                $asignaturasConMatricula[] = $asignatura;
+                            }
+                        }
+                    }
+                ?>
+                <?php foreach ($asignaturasConMatricula as $asignatura) : ?>
+                    <li><?= $asignatura ?></li>
+                <?php endforeach; ?>
+            </ol>
+        
 </body>
 
 </html>

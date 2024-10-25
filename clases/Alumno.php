@@ -47,6 +47,10 @@
             return $this->edad;
         }
 
+        function getAsignaturas(){
+            return $this->asignaturas;
+        }
+
         static function crearAlumnosDeMuestra(){
             $alumnos=[
                 
